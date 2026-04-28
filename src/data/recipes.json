@@ -1,0 +1,88 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Spaghetti Carbonara",
+      "image": "https://example.com/images/spaghetti-carbonara.jpg",
+      "ingredients": [
+        "200g Spaghetti",
+        "100g Guanciale",
+        "2 large eggs",
+        "50g Pecorino Romano",
+        "Black pepper"
+      ],
+      "instructions": [
+        "Boil the pasta.",
+        "Fry the guanciale.",
+        "Mix eggs and cheese.",
+        "Combine all ingredients off the heat."
+      ],
+      "cookingTime": "10M",
+      "servings": 2,
+      "category": "Pasta"
+    },
+    {
+      "id": "2",
+      "title": "Chicken Curry",
+      "image": "https://example.com/images/chicken-curry.jpg",
+      "ingredients": [
+        "500g Chicken",
+        "2 onions",
+        "3 cloves garlic",
+        "1 tbsp curry powder",
+        "400ml coconut milk"
+      ],
+      "instructions": [
+        "Sauté onions and garlic.",
+        "Add chicken and cook until browned.",
+        "Stir in curry powder.",
+        "Pour in coconut milk and simmer."
+      ],
+      "cookingTime": "30M",
+      "servings": 4,
+      "category": "Curry"
+    },
+    {
+      "id": "3",
+      "title": "Chocolate Cake",
+      "image": "https://example.com/images/chocolate-cake.jpg",
+      "ingredients": [
+        "200g flour",
+        "200g sugar",
+        "100g cocoa powder",
+        "1 tsp baking powder",
+        "2 eggs"
+      ],
+      "instructions": [
+        "Preheat oven to 180°C.",
+        "Mix dry ingredients.",
+        "Add eggs and mix well.",
+        "Bake for 30 minutes."
+      ],
+      "cookingTime": "40M",
+      "servings": 8,
+      "category": "Dessert"
+    },
+        {
+        "id": "4",
+        "title": "Caesar Salad",
+        "image": "https://example.com/images/caesar-salad.jpg",
+        "ingredients": [
+            "1 head romaine lettuce",
+            "50g Parmesan cheese",
+            "100g croutons",
+            "2 anchovy fillets",
+            "Caesar dressing"
+        ],
+        "instructions": [
+            "Chop the lettuce.",
+            "Grate the Parmesan cheese.",
+            "Toss lettuce with dressing.",
+            "Top with croutons and cheese."
+        ],
+        "cookingTime": "15M",
+        "servings": 2,
+        "category": "Salad"
+        }
+  ]
+}

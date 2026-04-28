@@ -1,54 +1,57 @@
-import recipes from '../data/recipes.json';
 import { useState } from 'react';
+import { Plus } from 'lucide-react';
 import { SearchBar } from '@/components/SearchBar';
 import { RecipeCard } from '@/components/RecipeCard';
+import { AddRecipeModal } from '@/components/AddRecipeModal';
+import { useRecipes } from '@/hooks/useRecipes';
 import { useFavorites } from '@/hooks/useFavorites';
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog"
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogDescription,
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
 
 export const RecipePage = () => {
-    const [recipeData] = useState(recipes.recipes);
+    const { allRecipes, addRecipe, deleteRecipe } = useRecipes();
+    const { favorites, toggleFavorite, isFavorite, removeFavoriteById } = useFavorites();
+
     const [selectedRecipe, setSelectedRecipe] = useState(null);
     const [searchQuery, setSearchQuery] = useState('');
     const [activeTab, setActiveTab] = useState('all');
-    const { favorites, toggleFavorite, isFavorite } = useFavorites();
+    const [showAddModal, setShowAddModal] = useState(false);
 
-    const filteredRecipes = recipeData.filter((recipe) => {
+    const applySearch = (list) => {
         const query = searchQuery.toLowerCase();
-        return (
-            recipe.title.toLowerCase().includes(query) ||
-            recipe.ingredients.some((ingredient) =>
-                ingredient.toLowerCase().includes(query)
-            )
+        if (!query) return list;
+        return list.filter(
+            (recipe) =>
+                recipe.title.toLowerCase().includes(query) ||
+                recipe.ingredients.some((i) => i.toLowerCase().includes(query))
         );
-    });
+    };
 
-    const filteredFavorites = favorites.filter((recipe) => {
-        const query = searchQuery.toLowerCase();
-        return (
-            recipe.title.toLowerCase().includes(query) ||
-            recipe.ingredients.some((ingredient) =>
-                ingredient.toLowerCase().includes(query)
-            )
-        );
-    });
+    const displayedRecipes =
+        activeTab === 'all' ? applySearch(allRecipes) : applySearch(favorites);
 
-    const displayedRecipes = activeTab === 'all' ? filteredRecipes : filteredFavorites;
+    const handleDelete = (recipeId) => {
+        deleteRecipe(recipeId);
+        removeFavoriteById(recipeId);
+    };
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
             <h1 className="text-4xl font-bold mb-4">Recipe Box</h1>
-            <p className="text-lg text-gray-600 mb-8">Welcome to Recipe Box! Here you can find delicious recipes to try out.</p>
+            <p className="text-lg text-gray-600 mb-8">
+                Welcome to Recipe Box! Here you can find delicious recipes to try out.
+            </p>
 
             <SearchBar value={searchQuery} onChange={setSearchQuery} />
 
-            {/* Tabs */}
-            <div className="flex gap-2 mb-8">
+            {/* Tabs + Add Button */}
+            <div className="flex items-center gap-2 mb-8">
                 <button
                     onClick={() => setActiveTab('all')}
                     className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
@@ -69,11 +72,21 @@ export const RecipePage = () => {
                 >
                     Favorites {favorites.length > 0 && `(${favorites.length})`}
                 </button>
+                <Button
+                    onClick={() => setShowAddModal(true)}
+                    className="ml-2 flex items-center gap-1"
+                    size="sm"
+                >
+                    <Plus size={16} />
+                    Add Recipe
+                </Button>
             </div>
 
             {displayedRecipes.length === 0 ? (
                 <p className="text-gray-400 text-sm mt-4">
-                    {activeTab === 'favorites' ? 'No favorites saved yet.' : 'No recipes match your search.'}
+                    {activeTab === 'favorites'
+                        ? 'No favorites saved yet.'
+                        : 'No recipes match your search.'}
                 </p>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 min-w-full px-12">
@@ -84,10 +97,17 @@ export const RecipePage = () => {
                             isFavorite={isFavorite(recipe.id)}
                             onToggleFavorite={toggleFavorite}
                             onViewRecipe={setSelectedRecipe}
+                            onDelete={handleDelete}
                         />
                     ))}
                 </div>
             )}
+
+            <AddRecipeModal
+                open={showAddModal}
+                onClose={() => setShowAddModal(false)}
+                onAdd={addRecipe}
+            />
 
             <Dialog open={!!selectedRecipe} onOpenChange={() => setSelectedRecipe(null)}>
                 <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
@@ -97,7 +117,6 @@ export const RecipePage = () => {
                             Category: {selectedRecipe?.category} | Time: {selectedRecipe?.cookingTime} | Servings: {selectedRecipe?.servings}
                         </DialogDescription>
                     </DialogHeader>
-
                     <div className="grid grid-cols-1 gap-6 mt-4">
                         <div>
                             <h3 className="font-bold text-lg mb-2">Instructions</h3>
@@ -111,5 +130,5 @@ export const RecipePage = () => {
                 </DialogContent>
             </Dialog>
         </div>
-    )
-}
+    );
+};

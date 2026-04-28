@@ -1,4 +1,4 @@
-import { Heart } from 'lucide-react';
+import { Heart, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import {
@@ -10,7 +10,7 @@ import {
     CardTitle,
 } from '@/components/ui/card';
 
-export const RecipeCard = ({ recipe, isFavorite, onToggleFavorite, onViewRecipe }) => {
+export const RecipeCard = ({ recipe, isFavorite, onToggleFavorite, onViewRecipe, onDelete }) => {
     return (
         <Card className="relative mx-auto w-full max-w-sm pt-0 overflow-hidden">
             <div className="absolute inset-0 z-30 aspect-video" />
@@ -24,6 +24,15 @@ export const RecipeCard = ({ recipe, isFavorite, onToggleFavorite, onViewRecipe 
                     className={isFavorite ? 'fill-red-500 text-red-500' : 'text-gray-400'}
                 />
             </button>
+            {recipe.isCustom && (
+                <button
+                    onClick={() => onDelete(recipe.id)}
+                    className="absolute top-2 left-2 z-40 bg-white/80 hover:bg-red-50 rounded-full p-1.5 shadow transition-colors"
+                    aria-label="Delete recipe"
+                >
+                    <Trash2 size={18} className="text-red-400" />
+                </button>
+            )}
             <img
                 src={recipe.image}
                 alt={recipe.title}

@@ -19,5 +19,13 @@ export const useFavorites = () => {
 
     const isFavorite = (recipeId) => favorites.some((r) => r.id === recipeId);
 
-    return { favorites, toggleFavorite, isFavorite };
+    const removeFavoriteById = (recipeId) => {
+        setFavorites((prev) => {
+            const updated = prev.filter((r) => r.id !== recipeId);
+            localStorage.setItem('recipeFavorites', JSON.stringify(updated));
+            return updated;
+        });
+    };
+
+    return { favorites, toggleFavorite, isFavorite, removeFavoriteById };
 };

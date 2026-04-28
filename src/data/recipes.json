@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Spaghetti Carbonara",
-      "image": "https://example.com/images/spaghetti-carbonara.jpg",
+      "image": "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=800&q=80",
       "ingredients": [
         "200g Spaghetti",
         "100g Guanciale",
@@ -24,7 +24,7 @@
     {
       "id": "2",
       "title": "Chicken Curry",
-      "image": "https://example.com/images/chicken-curry.jpg",
+      "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&q=80",
       "ingredients": [
         "500g Chicken",
         "2 onions",
@@ -45,7 +45,7 @@
     {
       "id": "3",
       "title": "Chocolate Cake",
-      "image": "https://example.com/images/chocolate-cake.jpg",
+      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80",
       "ingredients": [
         "200g flour",
         "200g sugar",
@@ -63,26 +63,277 @@
       "servings": 8,
       "category": "Dessert"
     },
-        {
-        "id": "4",
-        "title": "Caesar Salad",
-        "image": "https://example.com/images/caesar-salad.jpg",
-        "ingredients": [
-            "1 head romaine lettuce",
-            "50g Parmesan cheese",
-            "100g croutons",
-            "2 anchovy fillets",
-            "Caesar dressing"
-        ],
-        "instructions": [
-            "Chop the lettuce.",
-            "Grate the Parmesan cheese.",
-            "Toss lettuce with dressing.",
-            "Top with croutons and cheese."
-        ],
-        "cookingTime": "15M",
-        "servings": 2,
-        "category": "Salad"
-        }
+    {
+      "id": "4",
+      "title": "Caesar Salad",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80",
+      "ingredients": [
+        "1 head romaine lettuce",
+        "50g Parmesan cheese",
+        "100g croutons",
+        "2 anchovy fillets",
+        "Caesar dressing"
+      ],
+      "instructions": [
+        "Chop the lettuce.",
+        "Grate the Parmesan cheese.",
+        "Toss lettuce with dressing.",
+        "Top with croutons and cheese."
+      ],
+      "cookingTime": "15M",
+      "servings": 2,
+      "category": "Salad"
+    },
+    {
+      "id": "5",
+      "title": "Beef Tacos",
+      "image": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=800&q=80",
+      "ingredients": [
+        "500g ground beef",
+        "8 small corn tortillas",
+        "1 onion, diced",
+        "2 tsp cumin",
+        "1 tsp chili powder"
+
+      ],
+      "instructions": [
+        "Brown ground beef with onion in a skillet.",
+        "Season with cumin and chili powder.",
+        "Warm tortillas in a dry pan.",
+        "Fill tortillas with beef and desired toppings."
+      ],
+      "cookingTime": "20M",
+      "servings": 4,
+      "category": "Mexican"
+    },
+    {
+      "id": "6",
+      "title": "Margherita Pizza",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800&q=80",
+      "ingredients": [
+        "1 pizza dough ball",
+        "150ml tomato passata",
+        "200g fresh mozzarella",
+        "Fresh basil leaves",
+        "2 tbsp olive oil",
+        "Salt to taste"
+      ],
+      "instructions": [
+        "Preheat oven to 250°C with a pizza stone inside.",
+        "Stretch dough into a thin round.",
+        "Spread passata and add torn mozzarella.",
+        "Bake 8–10 minutes until crust is golden.",
+        "Top with fresh basil and a drizzle of olive oil."
+      ],
+      "cookingTime": "25M",
+      "servings": 2,
+      "category": "Pizza"
+    },
+    {
+      "id": "7",
+      "title": "Fluffy Pancakes",
+      "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&q=80",
+      "ingredients": [
+        "200g all-purpose flour",
+        "2 tbsp sugar",
+        "1 tsp baking powder",
+        "1/2 tsp baking soda",
+        "240ml buttermilk",
+        "1 egg",
+        "2 tbsp melted butter"
+      ],
+      "instructions": [
+        "Whisk dry ingredients together.",
+        "Mix buttermilk, egg, and butter in a separate bowl.",
+        "Fold wet into dry until just combined.",
+        "Cook on a greased griddle over medium heat until bubbles form, then flip."
+      ],
+      "cookingTime": "20M",
+      "servings": 4,
+      "category": "Breakfast"
+    },
+    {
+      "id": "8",
+      "title": "Avocado Toast",
+      "image": "https://www.giallozafferano.com/images/273-27388/Avocado-toast_1200x800.jpg",
+      "ingredients": [
+        "2 slices sourdough bread",
+        "1 ripe avocado",
+        "1 lemon, juiced",
+        "Red pepper flakes",
+        "Salt and black pepper",
+        "2 poached eggs (optional)"
+      ],
+      "instructions": [
+        "Toast the bread until golden.",
+        "Mash avocado with lemon juice, salt, and pepper.",
+        "Spread avocado mixture on toast.",
+        "Top with red pepper flakes and poached eggs if desired."
+      ],
+      "cookingTime": "10M",
+      "servings": 2,
+      "category": "Breakfast"
+    },
+    {
+      "id": "9",
+      "title": "Classic Cheeseburger",
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80",
+      "ingredients": [
+        "500g ground beef (80/20)",
+        "4 burger buns",
+        "4 slices cheddar cheese",
+        "Lettuce, tomato, onion",
+        "Ketchup and mustard"
+      ],
+      "instructions": [
+        "Divide beef into 4 patties and season with salt and pepper.",
+        "Cook patties on a hot grill or skillet 3–4 minutes per side.",
+        "Add cheese in the last minute to melt.",
+        "Assemble burgers with toppings and condiments."
+      ],
+      "cookingTime": "15M",
+      "servings": 4,
+      "category": "American"
+    },
+    {
+      "id": "10",
+      "title": "Grilled Salmon",
+      "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80",
+      "ingredients": [
+        "4 salmon fillets",
+        "2 tbsp olive oil",
+        "2 cloves garlic, minced",
+        "1 lemon, zested and juiced",
+        "Fresh dill",
+        "Salt and pepper"
+      ],
+      "instructions": [
+        "Mix olive oil, garlic, lemon zest, and dill.",
+        "Marinate salmon for 15 minutes.",
+        "Grill over medium-high heat 4–5 minutes per side.",
+        "Serve with lemon wedges."
+      ],
+      "cookingTime": "25M",
+      "servings": 4,
+      "category": "Seafood"
+    },
+    {
+      "id": "11",
+      "title": "Greek Salad",
+      "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&q=80",
+      "ingredients": [
+        "3 tomatoes, chopped",
+        "1 cucumber, sliced",
+        "1/2 red onion, thinly sliced",
+        "200g feta cheese",
+        "100g Kalamata olives",
+        "3 tbsp olive oil",
+        "1 tsp dried oregano"
+      ],
+      "instructions": [
+        "Combine tomatoes, cucumber, and onion in a bowl.",
+        "Add olives and crumble feta on top.",
+        "Drizzle with olive oil and sprinkle oregano.",
+        "Toss gently and serve immediately."
+      ],
+      "cookingTime": "10M",
+      "servings": 4,
+      "category": "Salad"
+    },
+    {
+      "id": "12",
+      "title": "French Onion Soup",
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80",
+      "ingredients": [
+        "4 large onions, thinly sliced",
+        "3 tbsp butter",
+        "1 litre beef stock",
+        "125ml dry white wine",
+        "4 slices baguette",
+        "150g Gruyère, grated"
+      ],
+      "instructions": [
+        "Caramelize onions in butter over low heat for 40 minutes.",
+        "Add wine and cook 5 minutes, then add stock and simmer 20 minutes.",
+        "Ladle soup into oven-safe bowls.",
+        "Top with baguette slices and Gruyère, then broil until bubbly."
+      ],
+      "cookingTime": "70M",
+      "servings": 4,
+      "category": "Soup"
+    },
+    {
+      "id": "13",
+      "title": "Blueberry Muffins",
+      "image": "https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=800&q=80",
+      "ingredients": [
+        "280g all-purpose flour",
+        "150g sugar",
+        "1 tsp baking powder",
+        "1/2 tsp salt",
+        "120ml milk",
+        "80ml vegetable oil",
+        "2 eggs",
+        "200g fresh blueberries"
+      ],
+      "instructions": [
+        "Preheat oven to 190°C and line a muffin tin.",
+        "Mix flour, sugar, baking powder, and salt.",
+        "Whisk milk, oil, and eggs together, then fold into dry ingredients.",
+        "Gently fold in blueberries and fill muffin cups 3/4 full.",
+        "Bake 20–25 minutes until a toothpick comes out clean."
+      ],
+      "cookingTime": "35M",
+      "servings": 12,
+      "category": "Dessert"
+    },
+    {
+      "id": "14",
+      "title": "Pad Thai",
+      "image": "https://images.unsplash.com/photo-1559314809-0d155014e29e?w=800&q=80",
+      "ingredients": [
+        "200g rice noodles",
+        "200g shrimp or chicken",
+        "2 eggs",
+        "3 tbsp fish sauce",
+        "2 tbsp tamarind paste",
+        "1 tbsp sugar",
+        "Bean sprouts, green onions, crushed peanuts for topping"
+      ],
+      "instructions": [
+        "Soak noodles in warm water for 30 minutes, then drain.",
+        "Stir-fry protein in a hot wok until cooked through.",
+        "Push to the side and scramble eggs.",
+        "Add noodles, fish sauce, tamarind, and sugar; toss everything together.",
+        "Serve topped with bean sprouts, green onions, and crushed peanuts."
+      ],
+      "cookingTime": "20M",
+      "servings": 2,
+      "category": "Asian"
+    },
+    {
+      "id": "15",
+      "title": "Beef Stew",
+      "image": "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80",
+      "ingredients": [
+        "800g beef chuck, cubed",
+        "3 carrots, chopped",
+        "3 potatoes, cubed",
+        "2 celery stalks, sliced",
+        "1 onion, diced",
+        "500ml beef broth",
+        "2 tbsp tomato paste",
+        "2 tsp Worcestershire sauce"
+      ],
+      "instructions": [
+        "Brown beef in batches in a heavy pot over high heat.",
+        "Sauté onion until soft, then stir in tomato paste.",
+        "Return beef to the pot, add broth and Worcestershire sauce.",
+        "Add vegetables and simmer on low heat for 1.5–2 hours until beef is tender."
+      ],
+      "cookingTime": "120M",
+      "servings": 6,
+      "category": "Stew"
+    }
   ]
 }

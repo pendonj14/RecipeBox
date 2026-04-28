@@ -1,5 +1,6 @@
 import recipes from '../data/recipes.json';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { SearchBar } from '@/components/SearchBar';
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -20,27 +21,35 @@ import {
 } from "@/components/ui/dialog"
 
 export const RecipePage = () => {
-    const [recipeData, setRecipeData] = useState([]);
-    // 2. Create a state to track which recipe was clicked
+    const [recipeData] = useState(recipes.recipes);
     const [selectedRecipe, setSelectedRecipe] = useState(null);
+    const [searchQuery, setSearchQuery] = useState('');
 
-    useEffect(() => {
-        setRecipeData(recipes.recipes);
-    }, []);
+    const filteredRecipes = recipeData.filter((recipe) => {
+        const query = searchQuery.toLowerCase();
+        return (
+            recipe.title.toLowerCase().includes(query) ||
+            recipe.ingredients.some((ingredient) =>
+                ingredient.toLowerCase().includes(query)
+            )
+        );
+    });
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
             <h1 className="text-4xl font-bold mb-4">Recipe Page</h1>
             <p className="text-lg text-gray-600 mb-8">Welcome to the recipe page! Here you can find delicious recipes to try out.</p>
 
+            <SearchBar value={searchQuery} onChange={setSearchQuery} />
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 min-w-full px-12">
-                {recipeData.map((recipe) => (
+                {filteredRecipes.map((recipe) => (
                      <Card key={recipe.id} className="relative mx-auto w-full max-w-sm pt-0 overflow-hidden">
-                        <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
+                        <div className="absolute inset-0 z-30 aspect-video" />
                         <img
                             src={recipe.image}
                             alt={recipe.title}
-                            className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+                            className="relative z-20 aspect-video w-full object-cover"
                         />
                         <CardHeader>
                             <CardAction>
@@ -48,11 +57,18 @@ export const RecipePage = () => {
                             </CardAction>
                             <CardTitle>{recipe.title}</CardTitle>
                             <CardDescription>
-                                Good for {recipe.servings} servings. Takes {recipe.cookingTime} to cook.
+                                <div>
+                                    <h3 className="font-bold text-lg mb-2">Ingredients</h3>
+                                    <ul className="list-disc pl-5 space-y-1">
+                                        {recipe.ingredients.map((ingredient, i) => (
+                                            <li key={i}>{ingredient}</li>
+                                    ))}
+                                    </ul>
+                                </div>
                             </CardDescription>
                         </CardHeader>
                         <CardFooter>
-                            {/* 3. When clicked, set this specific recipe to state */}
+                            {/*When clicked, set this specific recipe to state */}
                             <Button className="w-full" onClick={() => setSelectedRecipe(recipe)}>
                                 View Recipe
                             </Button>
@@ -73,16 +89,7 @@ export const RecipePage = () => {
                         </DialogDescription>
                     </DialogHeader>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                        {/* Ingredients Section */}
-                        <div>
-                            <h3 className="font-bold text-lg mb-2">Ingredients</h3>
-                            <ul className="list-disc pl-5 space-y-1">
-                                {selectedRecipe?.ingredients.map((ingredient, i) => (
-                                    <li key={i}>{ingredient}</li>
-                                ))}
-                            </ul>
-                        </div>
+                    <div className="grid grid-cols-1 gap-6 mt-4">
 
                         {/* Instructions Section */}
                         <div>
